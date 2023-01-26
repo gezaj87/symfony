@@ -5,12 +5,10 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HelloWorldController
+class PrintController
 {
-    public function helloWorld(): Response
+    public function printText(string $text): Response
     {
-        $text = 'Hello World!';
-
         return new Response(
             '<html><body>'.$text.'</body></html>'
         );
