@@ -1,12 +1,37 @@
 # config/routes.yaml
 
-hello_world:
-    path: /hello
-    controller: App\Controller\HelloWorldController::helloWorld
-    methods: GET
 
-
-print_text:
-    path: /print/{text}
-    controller: App\Controller\PrintController::printText
+app.swagger_ui:
+    path: /api/doc
     methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
+
+register:
+    path: /api/register
+    controller: App\Controller\RegisterController::register
+    methods: POST
+
+login:
+    path: /api/login
+    controller: App\Controller\LoginController::login
+    methods: POST
+
+products_list:
+    path: /api/products
+    controller: App\Controller\ProductController::list
+    methods: POST
+
+product_add:
+    path: /api/products/add
+    controller: App\Controller\ProductController::add
+    methods: POST
+
+product_edit:
+    path: /api/products/edit
+    controller: App\Controller\ProductController::edit
+    methods: PUT
+
+product_delete:
+    path: /api/products/delete
+    controller: App\Controller\ProductController::delete
+    methods: DELETE
